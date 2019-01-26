@@ -1,13 +1,7 @@
-'use strict';
-
 const log = console.log;
 const time = console.time;
 const timeEnd = console.timeEnd;
-const metric = (name, fn) => {
-  time(name);
-  fn();
-  timeEnd(name);
-};
+const metric = (name, fn) => { time(name); fn(); timeEnd(name); };
 
 // S2 = [ x^2 | x ε S1, x < 10 ]
 // for every x in S1 and x < 10 then provide 2x
@@ -26,7 +20,7 @@ function S2(calcFn, condFn) {
   let _set1 = new S1(0);  // very restrictive !!!
 
   this.toList = function* () {
-    let newItem = _set1.next();
+    let newItem = _set1.next(); // holds current element...why?
 
     while (condFn(newItem)) {
       yield calcFn(newItem);
