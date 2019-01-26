@@ -1,0 +1,24 @@
+{
+  "name": "list_comprehension",
+  "version": "0.0.1",
+  "description": "Javascript list comprehension capabilities testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/margaris23/list_comprehension.git"
+  },
+  "keywords": [
+    "javascript",
+    "comprehension"
+  ],
+  "author": "Nikolaos Margaris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/margaris23/list_comprehension/issues"
+  },
+  "homepage": "https://github.com/margaris23/list_comprehension#readme"
+}
