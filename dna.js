@@ -15,11 +15,12 @@ let totalBytes = 0;
 const _buffer = new Uint8Array(1024);
 async function test(fd) {
   const {bytesRead, buffer} = await read(fd, _buffer, 0, 1024, null);
+
+  memory.set(buffer, totalBytes); // first fill buffer then calculate total
   totalBytes += bytesRead;
-  memory.set(buffer, totalBytes);
-  if (bytesRead < 1024) {
+
+  if (!bytesRead) {
     console.log(decoder.end(Buffer.from(memory.buffer, 0, totalBytes)));
-    // TOSO: investigate bytes lost in the end
     console.log(totalBytes);
     fs.close(fd, () => {});
     return;
